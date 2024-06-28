@@ -1,2 +1,179 @@
+// Colors
+$primary-color: #ff6060;
+$secondary-color: #f7f7f7;
+$tertiary-color: #ffffff;
+$footer-color: #000000;
+$background-color: rgba(0, 0, 0, 0.3);
 
+// Fonts
+$primary-font: 'Montserrat';
 
+// Header Dimensions
+$header1-width: 1340px;
+$header-width: 1240px;
+$header2-width: 1174px;
+$header-height: 70px;
+$header-margin: 40px;
+$header-logo-width: 210px;
+$header-logo-min-width: 145px;
+$header-logo-height: 68px;
+$header-logo-min-height: 46px;
+
+// Navigation
+$nav-link-margin: 40px;
+$nav-link-margin-small: 20px;
+$nav-link-color: $footer-color;
+$nav-link-font-size: 24px;
+$nav-link-font-small-size: 12px;
+
+// Breakpoints
+$small-screen: 376px;
+$small1-screen: 440px;
+$small2-screen: 450px;
+$small3-screen: 600px;
+$medium-screen: 900px;
+
+// Minimum Widths
+$min-width: 375px;
+$min1-width: 335px;
+$min2-width: 305px;
+$min3-width: 295px;
+
+// Margins
+$margin-base: 0 auto;
+$margin-base05: 5px auto;
+$margin-base1: 10px auto;
+$margin-base2: 20px auto;
+$margin-base3: 30px auto;
+$margin-base4: 40px auto;
+$margin-base45: 45px auto;
+$margin-base5: 50px auto;
+$margin-base6: 60px auto;
+
+// Padding
+$padding-base43: 0 43px;
+
+// Page Dimensions
+$pages-width: 1440px;
+$pages0-width: 1240px;
+$pages1-width: 1000px;
+$pages1-height: 1000px;
+
+// Content Widths
+$content-large-width: 100%;
+$content-medlarge-width: 95%;
+$content-medium-width: 90%;
+$content-smalllarge-width: 75%;
+$content-medsmall1-width: 55%;
+$content-medsmall-width: 50%;
+$content-small1-width: 45%;
+$content-small0-width: 40%;
+$content-small-width: 25%;
+
+// Device Breakpoints
+$tablette-large: 1200px;
+$tablette-medium: 900px;
+$mobile: 375px;
+
+// Font Sizes
+$title0: 3rem;
+$title1: 2.25rem;
+$title2: 1.5rem;
+$title3: 1.1rem;
+$title4: 0.81rem;
+$title5: 0.625rem;
+$title6: 1rem;
+$title7: 0.9rem;
+$title8: 1.3rem;
+$title9: 6rem;
+$title10: 18rem;
+$title11: 9.37rem;
+
+// Image Sizes
+$img1: 64px;
+$img2: 48px;
+$img3: 32px;
+
+// General Sizes
+$size0: 0px;
+$size01: 1px;
+$size05: 5px;
+$size08: 8px;
+$size1: 10px;
+$size12: 12px;
+$size15: 15px;
+$size18: 18px;
+$size2: 20px;
+$size23: 23px;
+$size24: 24px;
+$size25: 25px;
+$size26: 26px;
+$size3: 30px;
+$size32: 32px;
+$size35: 35px;
+$size4: 40px;
+$size45: 45px;
+$size5: 50px;
+$size52: 52px;
+$size55: 55px;
+$size111: 111px;
+$size122: 122px;
+$size200: 200px;
+$size209: 209px;
+$size223: 223px;
+$size226: 226px;
+$size255: 255px;
+$size263: 263px;
+$size415: 415px;
+$size450: 450px;
+$size700: 700px;
+
+// Star Sizes
+$star1: 36px;
+$star2: 24px;
+$star3: 18px;
+$star7: 98px;
+
+// Radius Sizes
+$radius1: 5px;
+$radius2: 10px;
+$radius3: 15px;
+$radius4: 20px;
+$radius5: 25px;
+$radius6: 30px;
+$radius7: 35px;
+$radius8: 40px;
+$radius9: 45px;
+$radius10: 50px;
+
+// Font Weights
+$weight1: 700;
+$weight6: 600;
+$weight2: 500;
+$weight3: 400;
+
+// Percentage Sizes
+$psize05: 0.5%;
+$psize1: 1%;
+$psize2: 2%;
+$psize3: 3%;
+$psize4: 4%;
+$psize5: 5%;
+$psize6: 6%;
+$psize7: 7%;
+$psize8: 8%;
+$psize9: 9%;
+$psize10: 10%;
+$psize11: 11%;
+$psize12: 12%;
+$psize20: 20%;
+$psize30: 30%;
+$psize33: 33%;
+$psize65: 65%;
+$psize79: 79%;
+$psize80: 80%;
+$psize81: 81%;
+$psize84: 84%;
+$psize86: 86%;
+$psize87: 87%;
+$psize92: 92%;

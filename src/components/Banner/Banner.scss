@@ -1,0 +1,108 @@
+@import '../../App.scss';
+
+// Media Query Mixins
+@mixin small-screen {
+  @media (max-width: $small-screen) {
+    @content;
+  }
+}
+
+@mixin medium-screen {
+  @media (max-width: $medium-screen) {
+    @content;
+  }
+}
+
+// Banner Styles Mixins
+@mixin banner-styles {
+  display: flex;
+  position: relative;
+  border-radius: $radius3;
+  height: $size223;
+  max-width: $pages-width;
+  width: $psize86;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: $size4;
+  box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 6px;
+}
+
+@mixin banner-img-styles {
+  border-radius: $radius3;
+  height: $content-large-width;
+  object-fit: cover;
+  width: $content-large-width;
+}
+
+@mixin banner-filtre-styles {
+  display: flex;
+  position: absolute;
+  height: $content-large-width;
+  width: $content-large-width;
+  border-radius: $radius3;
+  background-color: rgba(0, 0, 0, 0.500);
+}
+
+@mixin banner-txt-styles {
+  display: flex;
+  position: absolute;
+  color: white;
+  font-size: $title0;
+  font-weight: $weight1;
+  text-align: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  top: $content-medsmall-width;
+  left: $content-medsmall-width;
+  width: $content-large-width;
+  text-shadow: rgba(0, 0, 0, 0.30) 0px 3px 4px;
+}
+
+// Banner Component Styles
+.banner {
+  @include banner-styles;
+}
+
+.banner__img {
+  @include banner-img-styles;
+}
+
+.banner__filtre {
+  @include banner-filtre-styles;
+}
+
+.banner__txt {
+  @include banner-txt-styles;
+}
+
+// Media Queries for Banner
+@include medium-screen {
+  .banner {
+    width: $content-medium-width;
+    margin: $margin-base2;
+  }
+  
+  .banner__txt {
+    width: $content-large-width;
+    font-size: $title1;
+  }
+}
+
+@include small-screen {
+  .banner {
+    width: $content-medium-width;
+    height: $size111;
+    margin: $margin-base2;
+    box-shadow: none;
+  }
+
+  .banner__txt {
+    display: flex;
+    width: $content-large-width;
+    font-size: $title2;
+    text-align: left;
+    padding-left: $psize10;
+    padding-right: 0%;
+  }
+}

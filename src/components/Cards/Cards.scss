@@ -1,0 +1,67 @@
+@import '../../App.scss';
+
+// Base Styles for Cards
+@mixin cards-base-style {
+    display: flex;
+    width: $content-large-width;
+    height: $content-large-width;
+    position: relative;
+    border-radius: $radius2;
+    overflow: hidden;
+
+    &__img {
+        width: $content-large-width;
+        height: $content-large-width;
+        object-fit: cover;
+        min-width: $content-large-width;
+        min-height: $content-large-width;
+    }
+
+    &__title {
+        color: $tertiary-color;
+        position: absolute;
+        font-size: $title3;
+        bottom: $size0;
+        margin: $size15 $size2;
+    }
+}
+
+// Medium Screen Styles for Cards
+@mixin cards-medium-screen {
+    @include cards-base-style;
+
+    &__title {
+        font-size: $title6;
+        margin: $size1;
+    }
+}
+
+// Small Screen Styles for Cards
+@mixin cards-small-screen {
+    @include cards-base-style;
+
+    &__title {
+        color: $tertiary-color;
+        position: absolute;
+        font-size: $title3;
+        bottom: $size0;
+        margin: $size1 $size1;
+    }
+
+    &__img {
+        height: $size226; 
+    }
+}
+
+// Cards Component Styles
+.cards {
+    @include cards-base-style;
+
+    @media (max-width: $medium-screen) {
+        @include cards-medium-screen;
+    }
+
+    @media (max-width: $small-screen) {
+        @include cards-small-screen;
+    }
+}

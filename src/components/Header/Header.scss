@@ -1,0 +1,115 @@
+@import '../../App.scss';
+
+// Header Styles
+.header {
+    display: flex;
+    width: $pages0-width;
+    max-width: $pages-width;
+    height: $header-height;
+    justify-content: space-between;
+    align-items: center;
+    margin: $header-margin auto;
+
+    &-logo {
+        width: $header-logo-width;
+        height: $header-logo-height;
+    }
+
+    &__fig {
+        margin-left: $size0;
+        width: $header-logo-width;
+    }
+
+    .nav-header {
+        display: flex;
+        justify-content: flex-end;
+        margin: auto;
+        width: $header-width;
+
+        a {
+            margin-left: $nav-link-margin;
+            text-transform: none;
+            text-decoration: none;
+            color: $nav-link-color;
+            font-size: $nav-link-font-size;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+            &.active {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+// Media Queries
+@media (max-width: $header1-width) {
+    .header {
+        width: $content-medium-width;
+    }
+}
+
+@media (max-width: $medium-screen) {
+    .header {
+        width: $content-medium-width;
+
+        &-logo {
+            width: $header-logo-min-width;
+            height: $header-logo-min-height;
+        }
+
+        .nav-header {
+            width: $content-medsmall1-width;
+            margin-left: $size1;
+            margin: $size0;
+
+            a {
+                margin-left: $size1;
+                font-size: $title8;
+            }
+        }
+    }
+}
+
+@media (max-width: $small2-screen) {
+    .header .nav-header {
+        width: $content-small0-width;
+        margin-left: $size1;
+        margin: $size0;
+
+        a {
+            margin-left: $size05;
+            font-size: $title7;
+        }
+    }
+}
+
+@media (max-width: $small-screen) {
+    .header {
+        display: flex;
+        width: $content-medium-width;
+        margin: $size1 auto;
+
+        &-logo {
+            width: $content-large-width;
+            min-width: $content-smalllarge-width;
+        }
+
+        &__fig {
+            width: $content-small1-width;
+        }
+
+        .nav-header {
+            width: $content-medsmall1-width;
+
+            a {
+                margin-left: $size1;
+                font-size: $nav-link-font-small-size;
+                text-transform: uppercase;
+                font-weight: $weight6;
+            }
+        }
+    }
+}

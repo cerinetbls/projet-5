@@ -1,0 +1,41 @@
+@import '../../App.scss';
+
+// Home Gallery Styles
+.home__gallery {
+    max-width: $pages-width;
+    width: $header2-width;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $size4;
+    padding: $size4;
+    margin: $size4 auto;
+    background-color: $secondary-color;
+    border-radius: $radius5;
+}
+
+// Media Queries
+@media (max-width: $header1-width) {
+    .home__gallery {
+        width: $psize80;
+    }
+}
+
+@media (max-width: $medium-screen) {
+    .home__gallery {
+        width: $content-medium-width;
+        grid-template-columns: repeat(2, 1fr);
+        gap: $size2;
+        padding: $size2;
+    }
+}
+
+@media (max-width: $small-screen) {
+    .home__gallery {
+        width: $content-medium-width;
+        grid-template-columns: repeat(1, 1fr);
+        background-color: $tertiary-color;
+        gap: $size2;
+        margin: $size2 auto;
+        padding: $size0;
+    }
+}
