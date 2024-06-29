@@ -1,0 +1,196 @@
+@import '../../App.scss';
+
+// Déclaration des variables
+$transition-speed: 0.3s;
+$transition-slow-speed: 1.5s;
+$rotate-angle: 180deg;
+
+// Animation de slide vers le bas
+@keyframes slide-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-80px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+// Conteneur principal pour la collapse
+.Collapse__container {
+    display: flex;
+    flex-direction: column;
+    border-radius: $radius1;
+    margin: $margin-base;
+    align-items: center;
+    max-width: $pages-width;
+    width: $psize84;
+
+    .Collapse {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: $radius1;
+        margin-bottom: $size3;
+        width: $content-large-width;
+
+        // Style lorsque la collapse est ouverte
+        &.open {
+            .Collapse__title img {
+                transform: rotate($rotate-angle);
+            }
+            .Collapse__content {
+                display: block;
+                opacity: 1;
+                width: $content-large-width;
+                transition: $transition-slow-speed;
+                max-height: $pages1-height;
+            }
+        }
+
+        // Titre de la collapse
+        .Collapse__title {
+            display: flex;
+            height: $size52;
+            width: $content-large-width;
+            background-color: $primary-color;
+            padding: $size0 $size2 $size0 $size15;
+            border-radius: $radius1;
+            align-items: center;
+            position: relative;
+
+            h2 {
+                color: $tertiary-color;
+                font-size: $title2;
+                font-weight: $weight1;
+            }
+
+            img {
+                cursor: pointer;
+                position: absolute;
+                height: $size1;
+                width: $size15;
+                color: $tertiary-color;
+                right: $size15;
+                transition: transform $transition-speed ease;
+            }
+        }
+
+        // Contenu de la collapse
+        .Collapse__content {
+            display: none;
+            opacity: 0;
+            overflow: hidden;
+            background-color: $secondary-color;
+            padding: $size15;
+
+            ul {
+                list-style: none;
+                padding: $size0;
+                animation-name: slide-down;
+                animation-duration: 1.5s; // Utilisation de l'animation slide-down
+            }
+
+            li {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: $size1;
+                font-size: $title3;
+                font-weight: $weight3;
+                font-family: $primary-font;
+            }
+
+            p {
+                color: $footer-color;
+                font-size: $title3;
+                font-weight: $weight3;
+                animation-name: slide-down; // Utilisation de l'animation slide-down
+                animation-duration: 1.5s;
+            }
+        }
+    }
+}
+
+// Styles pour les écrans de taille moyenne
+@media (max-width: $medium-screen) {
+    .Collapse__container {
+        width: $content-medium-width;
+
+        .Collapse__title {
+            display: flex;
+            height: $size3;
+            padding: $size0 $size1;
+
+            h2 {
+                font-size: $size2;
+                font-weight: $weight2;
+            }
+        }
+    }
+}
+
+// Styles pour les petits écrans
+@media (max-width: $small3-screen) {
+    .Collapse__container {
+        width: $content-medlarge-width;
+        flex-direction: column;
+        align-items: center;
+        margin: $margin-base;
+    }
+
+    .Collapse__title {
+        display: flex;
+        height: $size45;
+        padding: $size0 $size1;
+
+        h2 {
+            font-size: $title8;
+            font-weight: $weight2;
+        }
+    }
+}
+
+// Styles pour les très petits écrans
+@media (max-width: $small-screen) {
+    .Collapse__container {
+        width: $psize92;
+        flex-direction: column;
+        align-items: center;
+        margin: $size0 auto;
+
+        .Collapse {
+            margin-bottom: $size2;
+
+            .Collapse__title {
+                display: flex;
+                height: $size3;
+                padding: $size0 $size1;
+
+                h2 {
+                    font-size: $title4;
+                    font-weight: $weight6;
+                }
+
+                img {
+                    height: $size08;
+                    width: $size12;
+                    right: $size15;
+                }
+            }
+
+            .Collapse__content {
+                padding: $size1;
+
+                li {
+                    margin-bottom: $size1;
+                    font-size: $title5;
+                }
+
+                p {
+                    font-size: $title5;
+                }
+            }
+        }
+    }
+}
