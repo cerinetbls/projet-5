@@ -1,7 +1,20 @@
-import React from 'react';
+import React from "react";
+import Error from "../../components/Error/Error";
+import Footer from "../../components/Footer/Footer";
+import Header from "../../components/Header/Header";
 
-function NotFound() {
-  return <div>404 - Page Not Found</div>;
-}
+const NotFound = () => {
+    return (
+        <>
+            <div className="NotFound">
+                <Header />
+                <main>
+                    <Error />
+                </main>
+                <Footer />
+            </div>
+        </>
+    );
+};
 
 export default NotFound;
