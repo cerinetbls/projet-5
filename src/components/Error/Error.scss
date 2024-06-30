@@ -1,0 +1,110 @@
+@import '../../App.scss';
+
+// Mixin pour centrer les éléments flex
+@mixin flex-center($direction: row, $align: center, $justify: center) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+// Mixin pour styliser le texte d'erreur
+@mixin error-text-style($font-size, $font-weight, $color, $width: auto, $height: auto, $margin: $margin-base) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  color: $color;
+  width: $width;
+  height: $height;
+  font-family: $primary-font;
+  margin: $margin;
+}
+
+// Conteneur principal pour le contenu d'erreur
+.error_Container {
+  @include flex-center(column); // Centrage avec direction colonne
+  height: $size700;
+  max-width: $pages-width;
+  width: $content-medium-width;
+  margin: $margin-base5;
+
+  // Style pour le numéro d'erreur
+  &__Number {
+    @include flex-center;
+    @include error-text-style($title10, $weight1, $primary-color, $content-large-width, $size263);
+    margin: $margin-base5;
+  }
+
+  // Conteneur pour le contenu textuel
+  &__text_content {
+    @include flex-center(row, center, center);
+    height: $size52;
+    width: $content-large-width;
+    gap: $size1;
+    margin: $margin-base4;
+  }
+
+  // Style pour le texte d'erreur
+  &__Text {
+    @include flex-center;
+    @include error-text-style($title1, $weight2, $primary-color);
+  }
+
+  // Style pour le lien d'erreur
+  &__Link {
+    @include flex-center;
+    @include error-text-style($title3, $weight2, $footer-color, $content-large-width, $size26, $margin-base5);
+  }
+}
+
+// Styles pour les écrans de taille moyenne
+@media (max-width: $medium-screen) {
+  .error_Container {
+    height: $size450;
+
+    &__Number {
+      @include error-text-style($title11, $weight1, $primary-color, $content-large-width, $size200);
+    }
+
+    &__text_content {
+      flex-direction: column;
+      height: $size45;
+    }
+
+    &__Text {
+      font-size: $title3;
+    }
+
+    &__Link {
+      font-size: $title7;
+      margin: $margin-base5;
+    }
+  }
+}
+
+// Styles pour les petits écrans
+@media (max-width: $small-screen) {
+  .error_Container {
+    height: $size450;
+
+    &__Number {
+      @include error-text-style($title9, $weight1, $primary-color, $content-large-width, $size200, $margin-base2);
+    }
+
+    &__text_content {
+      flex-direction: column;
+    }
+
+    &__Text {
+      width: $content-medium-width;
+      font-size: $title3;
+      margin: $margin-base;      
+      text-align: center;
+    }
+
+    &__Link {
+      width: $content-smalllarge-width;
+      font-size: $title7;
+      margin: $margin-base5;
+    }
+  }
+}
