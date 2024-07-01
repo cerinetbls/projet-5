@@ -1,0 +1,90 @@
+@import '../../App.scss';
+
+// Mixins pour les éléments de navigation du carrousel
+@mixin carousel-navigation {
+    display: flex;
+    position: absolute;
+    top: $content-medsmall-width;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+// Mixin pour définir les dimensions et les marges des éléments du carrousel
+@mixin carousel-dimensions($width, $height, $margin) {
+    width: $width;
+    height: $height;
+    margin: $margin;
+}
+
+// Styles pour le conteneur principal du carrousel
+.carousel {
+    display: flex;
+    position: relative;
+    align-items: center;
+    @include carousel-dimensions($content-large-width, $size415, $margin-base);
+    border-radius: $radius5;
+
+    // Styles pour les images du carrousel
+    .carouselImage {
+        @include carousel-dimensions($content-large-width, $content-large-width, 0);
+        object-fit: cover;
+        border-radius: $radius5;
+    }
+
+    // Styles pour le compteur d'images
+    .counter {
+        display: flex;
+        position: absolute;
+        color: $tertiary-color;
+        top: $content-medium-width;
+        left: $content-medsmall-width;
+        font-size: $size25;
+        font-family: $primary-font;
+    }
+
+    // Styles pour le bouton précédent
+    .carouselPrev {
+        @include carousel-navigation;
+        left: $size15;
+    }
+
+    // Styles pour le bouton suivant
+    .carouselNext {
+        @include carousel-navigation;
+        right: $size15;
+    }
+}
+
+// Adaptations pour les écrans de taille moyenne
+@media (max-width: $medium-screen) {
+    .carousel {
+        @include carousel-dimensions($content-medium-width, $size450, $margin-base1);
+    }
+}
+
+// Adaptations pour les petits écrans
+@media (max-width: $small-screen) {
+    .carousel {
+        @include carousel-dimensions($content-large-width, $size255, $margin-base1);
+
+        // Masquer le compteur d'images sur les petits écrans
+        .counter {
+            display: none;
+        }
+
+        // Ajustements pour les boutons de navigation sur les petits écrans
+        .carouselPrev,
+        .carouselNext {
+            width: $size1;
+            height: $size2;
+
+            &.carouselPrev {
+                left: $size05;
+            }
+
+            &.carouselNext {
+                right: $size05;
+            }
+        }
+    }
+}
