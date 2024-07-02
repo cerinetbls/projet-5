@@ -6,7 +6,7 @@ function Collapse({ title, content }) {
     const [open, setOpen] = useState(false);
 
     const handleToggle = (event) => {
-        // Vérifier si la cible du clic est l'image hightArrow
+        // Vérifier si la cible du clic est l'image flechUp
         if (event.target.tagName === 'IMG') {
             setOpen(!open);
         }
