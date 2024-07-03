@@ -1,0 +1,273 @@
+@import '../../App.scss';
+@mixin large-element {
+    max-width: $pages-width;
+    margin: $margin-base;
+}
+@mixin flex-element {
+    display: flex;
+}
+@mixin flex-column {
+    @include flex-element;
+    flex-direction: column;
+}
+@mixin flex-row {
+    @include flex-element;
+    flex-direction: row;
+}
+@mixin flex-row-reverse {
+    @include flex-element;
+    flex-direction: row-reverse;
+}
+@mixin flex-center {
+    align-items: center;
+}
+.logement_body {
+    @include flex-column;
+    @include large-element;
+    justify-content: center;
+    align-items: center;
+}
+.logementsCarrousel {
+    margin: $margin-base;
+    width: $pages0-width;
+}
+.section_2_logements {
+    @include flex-row;
+    justify-content: space-between;
+    width: $pages0-width;
+    margin: $margin-base;
+}
+.logement_info_container_wrapper {
+    @include flex-row;
+    width: $content-large-width;
+    margin: $size2 $size0;
+}
+.logements_info_container {
+    @include flex-column;
+    width: $content-smalllarge-width;
+}
+.logement-title {
+    width: fit-content;
+    margin-bottom: $size15;
+    font-size: $title1;
+    color: $primary-color;
+}
+.logement-location {
+    height: $size26;
+    font-size: $title3;
+    font-weight: $weight2;
+    margin-bottom: $size15;
+}
+.logement-tags {
+    @include flex-row;
+    gap: $size1;
+}
+.logement-tag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $size25;
+    padding: $size01 $size23;
+    background-color: $primary-color;
+    border-radius: $radius2;
+    font-size: $title7;
+    font-weight: $weight1;
+    color: white;
+}
+.host_rating_container {
+    display: flex;
+    flex-direction: column;
+    width: $content-small-width;
+    justify-content: space-around;
+}
+.host {
+    @include flex-row-reverse;
+    align-items: center;
+    gap: $size15;
+    margin-bottom: $size15;
+    font-size: $title3;
+    color: $primary-color;
+    margin-right: $psize1;
+}
+.host img {
+    width: $img1;
+    border-radius: $radius10;
+    margin-top: $size1;
+    margin-bottom: $size1;
+}
+.rating {
+    @include flex-element;
+    justify-content: flex-end;
+}
+.rating-stars {
+    @include flex-element;
+    color: $primary-color;
+    justify-content: flex-end;
+}
+.rating-stars img {
+    height: $star1;
+    width: $star1;
+    margin-left: $psize4;
+    margin-right: $psize1;
+}
+.Collapse-logements {
+    margin: $margin-base;
+    @include flex-row;
+    width: 1208px;
+    gap: $psize10;
+}
+.Collapse_title {
+    width: $content-large-width;
+}
+.Collapse-description,
+.Collapse-equipement {
+    width: $content-large-width;
+    margin-bottom: $size2;
+    overflow: hidden;
+    background-color: $secondary-color;
+}
+.Collapse-description.open,
+.Collapse-equipement.open {
+    height: auto;
+    max-height: $pages1-width;
+    overflow: visible;
+}
+@media (max-width: $header1-width) {
+    .Collapse-logements {
+        width: $content-medium-width;
+    }
+    .section_2_logements {
+        width: $content-medium-width;
+    }
+    .logementsCarrousel {
+        width: $content-medium-width;
+    }
+}
+@media (max-width: $medium-screen) {
+    .logementsCarrousel {
+        width: $content-large-width;
+        margin-bottom: $size15;
+    }
+    .section_2_logements {
+        width: $content-medium-width;
+    }
+    .Collapse-logements {
+        width: $content-medium-width;
+        gap: $psize10;
+        justify-content: center;
+    }
+    .host img {
+        width: $img2;
+    }
+    .rating-stars {
+        @include flex-element;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .rating-stars img {
+        height: $star2;
+        width: $star2;
+        margin-left: $psize4;
+        margin-right: $psize05;
+    }
+    .logement-title {
+        font-size: $title2;
+    }
+    .logement-tag {
+        padding: $size15 $size1;
+    }
+    .logement-location {
+        height: $size2;
+        font-size: $title6;
+    }
+}
+@media (max-width: $small3-screen) {
+    .logement_info_container_wrapper {
+        @include flex-column;
+        margin: $size0;
+    }
+    .logements_info_container {
+        width: $content-large-width;
+        margin: $margin-base1;
+    }
+    .host_rating_container {
+        @include flex-row-reverse;
+        justify-content: space-between;
+        width: $content-large-width;
+        height: $size45;
+        margin: $size15 auto;
+    }
+    .Collapse-logements {
+        @include flex-column;
+        width: $psize92;
+        gap: $psize4;
+    }
+}
+@media (max-width: $small1-screen) {
+    .logement-tag {
+        padding: $size15 $size01;
+    }
+}
+@media (max-width: $small-screen) {
+    .logementsCarrousel {
+        width: $content-medium-width;
+        overflow: hidden;
+        margin-bottom: 0;
+    }
+    .section_2_logements {
+        width: $content-medium-width;
+    }
+    .logement_info_container_wrapper {
+        @include flex-column;
+        margin: $size0;
+    }
+    .logements_info_container {
+        width: $content-large-width;
+        margin: $margin-base;
+    }
+    .logement-title {
+        font-size: $title3;
+    }
+    .logement-location {
+        height: $size26;
+        font-size: $title7;
+        margin-bottom: $size05;
+        font-weight: $weight6;
+       
+    }
+    .logement-tag {
+        height: $size18;
+        padding: $size0 $size2;
+        font-size: $title5;
+        border-radius: $size05;
+        flex-wrap: wrap;
+    }
+    .logement-tags {
+        flex-wrap: wrap;
+    }
+    .host_rating_container {
+        margin: $margin-base1;
+    }
+    .host img {
+        width: $size32;
+    }
+    .rating-stars img {
+        height: $size18;
+        width: $size18;
+        margin-left: $psize4;
+        margin-right: $psize05;
+    }
+    .host {
+        align-items: center;
+        gap: $size05;
+        margin-bottom: 0;
+        font-size: $size12;
+        color: $primary-color;
+        margin-right: $psize1;
+        width: $psize30;
+    }
+    .host span {
+        display: flex;
+        margin-left: $size2;
+    }
+}

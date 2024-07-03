@@ -2,12 +2,15 @@ import React, { useState } from 'react';
 import './Collapse.scss';
 import flechUp from '../../assets/hightArrow.jpg';
 
-function Collapse({ title, content }) {
+function Collapse({ title, children }) {
+      // Défini l'état open pour savoir si le contenu est ouvert ou fermé
     const [open, setOpen] = useState(false);
 
+// Fonction pour gérer le clic sur le titre
     const handleToggle = (event) => {
-        // Vérifier si la cible du clic est l'image flechUp
+        // Vérifie si l'image a été cliquée
         if (event.target.tagName === 'IMG') {
+            // Basculer l'état open
             setOpen(!open);
         }
     };
@@ -24,22 +27,11 @@ function Collapse({ title, content }) {
                     />
                 </div>
                 <div className='Collapse__content'>
-                    {open && (
-                        Array.isArray(content) ? (
-                            <ul>
-                                {content.map((item, index) => (
-                                    <li key={index}>{item}</li>
-                                ))}
-                            </ul>
-                        ) : (
-                            <p>{content}</p>
-                        )
-                    )}
+                    {open && children}
                 </div>
             </div>
         </div>
     );
 }
-
 
 export default Collapse;

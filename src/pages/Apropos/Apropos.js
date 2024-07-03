@@ -1,4 +1,3 @@
-// import React from "react";
 import React from "react";
 import Banner from "../../components/Banner/Banner";
 import Header from "../../components/Header/Header";
@@ -31,25 +30,21 @@ const DEFAULT_COLLAPSE = [
 ];
 
 function Apropos() {
-    // const [collapses, setCollapses] = useState(DEFAULT_COLLAPSE);
-
     const CollapsesListe = DEFAULT_COLLAPSE.map((collapse) => (
         <Collapse
             key={collapse.id}
             title={collapse.title}
-            content={collapse.content}
-        />
+        >
+            <p>{collapse.content}</p>
+        </Collapse>
     ));
 
     return (
         <div className="apropos">
-            
-                <Header />
-                <Banner texte="" image={imgAproposBanner} />
-                
-                <div className="Collapse__container">{CollapsesListe}</div>
-                <Footer />
-            
+            <Header />
+            <Banner texte="" image={imgAproposBanner} />
+            <div className="Collapse__container">{CollapsesListe}</div>
+            <Footer />
         </div>
     );
 }
