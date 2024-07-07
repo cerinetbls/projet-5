@@ -1,6 +1,5 @@
 @import '../../App.scss';
 @mixin large-element {
-    max-width: $pages-width;
     margin: $margin-base;
 }
 @mixin flex-element {

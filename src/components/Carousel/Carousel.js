@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useParams } from 'react-router-dom';
 import logements from "../../datas/logements.json";
 import flechprev from '../../assets/flech-prev.png';
@@ -10,21 +10,30 @@ const Carousel = () => {
     const [logementData, setLogementData] = useState(null);
 
     useEffect(() => {
-        // Récupérer les données du logement correspondant à l'ID passé dans l'URL
-        const data = logements.find((item) => item.id === id); // Utilisez logements au lieu de jsonData
+        const data = logements.find((item) => item.id === id);
         setLogementData(data);
     }, [id]);
 
     const CarouselComponent = ({ pictures }) => {
         const [currentIndex, setCurrentIndex] = useState(0);
 
-        const previousSlide = () => {
+        const previousSlide = useCallback(() => {
             setCurrentIndex((prevIndex) => (prevIndex === 0 ? pictures.length - 1 : prevIndex - 1));
-        };
+        }, [pictures.length]);
 
-        const nextSlide = () => {
+        const nextSlide = useCallback(() => {
             setCurrentIndex((prevIndex) => (prevIndex === pictures.length - 1 ? 0 : prevIndex + 1));
-        };
+        }, [pictures.length]);
+
+        useEffect(() => {
+            const preloadImages = () => {
+                pictures.forEach((src) => {
+                    const img = new Image();
+                    img.src = src;
+                });
+            };
+            preloadImages();
+        }, [pictures]);
 
         if (pictures.length === 1) {
             return (
@@ -47,7 +56,6 @@ const Carousel = () => {
     return (
         <div className="carouselWrapper">
             {logementData && <CarouselComponent pictures={logementData.pictures} />}
-            {/* Autres éléments de présentation du logement */}
         </div>
     );
 };
